@@ -5,13 +5,8 @@
 ##      Author: Tousif Islam
 ##
 ##      Created: 12-07-2023
-##
-##      Description: Compute the QNM fundamental mode and tail fit 
-##                   from amplitudes
-##
-##      Modified:
-##
 #############################################################################
+
 import numpy as np
 
 import matplotlib
@@ -28,11 +23,32 @@ from scipy.signal import find_peaks
 from scipy.optimize import curve_fit
 import gwtools
 
-class RingdownAmplitudeFit:
-    
-    def __init__(self, filename, tail_fit_window=None, qnm_fit_window=None, crossterm_fit_window=None, 
-                 qinput=1000, throw_junk_until_indx=None, fit_tail_envelop=False):
-        
+class PostMergerAmplitudeFit:
+    """
+    Class to fit post-merger data
+    """
+    def __init__(self, filename, qinput=1000, throw_junk_until_indx=None, 
+                 qnm_fit_window=None, tail_fit_window=None, crossterm_fit_window=None,
+                 fit_tail_envelop=False):
+        """
+        filename: name of the waveform data file (Required) 
+        qinput: mass ratio values with qinput>=1
+        throw_junk_until_indx: last index until which data should be discarded before applying qnm or tail fits; 
+                               Default is None
+                               
+        tail_fit_window: provide a window for fitting tail coefficients only;
+                         e.g. [200,800] (in M);
+                         Default is None (in that case no tail fit is performed)
+        qnm_fit_window:  provide a window for fitting qnm coefficients only;
+                         e.g. [200,800] (in M);
+                         Default is None (in that case no qnm fit is performed)
+        crossterm_fit_window: provide a window for fitting cross-term coefficients only;
+                              e.g. [100,200] (in M);
+                              Default is None (in that case no cross-term fit is performed)
+
+        fit_tail_envelop: Whether the data has oscillatory tail behaviour - in which case, we fit the tail envelop;
+                          Default is False.
+        """
         self.filename = filename
         self.raw_time, self.raw_h = self._read_data_from_file()
         m1toM = 1 / (1+1/qinput)
@@ -155,10 +171,10 @@ class RingdownAmplitudeFit:
         popt, pcov = curve_fit(self.qnm_and_tail_fit_func, xdata, ydata, maxfev=10000)
         return popt, pcov
     
-    def _plot_qnm_fit():
+    def _plot_qnm_fit(self):
         tcommon = np.arange(10,1000,0.1)
         plt.semilogy(self.t_interp, abs(self.h_interp), color='grey', lw=3, alpha=0.4, label='Data')
-        plt.semilogy(tcommon, qnm_tail_func(tcommon, *popt3), '--', label='QNM + Tail Fit')
+        plt.semilogy(tcommon, self.qnm_fit_func(tcommon, *self.popt_qnm), '--', label='QNM Fit')
         plt.xlim(0,1020)
         plt.ylim(10**np.floor(np.log10(min(abs(self.h_interp)))),1e1)
         plt.xlabel('t')
