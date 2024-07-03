@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##      Filename: tail.py
+##      Filename: tails.py
 ##
 ##      Author: Tousif Islam
 ##
@@ -31,7 +31,9 @@ class PostMergerAmplitudeFit:
                  qnm_fit_window=None, tail_fit_window=None, crossterm_fit_window=None,
                  fit_tail_envelop=False):
         """
-        filename: name of the waveform data file (Required) 
+        filename: name of the waveform data file (Required); should be in .txt or .dat format;
+                  columns should have the following format: time, h_real, h_imag, ..
+                  
         qinput: mass ratio values with qinput>=1
         throw_junk_until_indx: last index until which data should be discarded before applying qnm or tail fits; 
                                Default is None
