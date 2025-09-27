@@ -157,12 +157,14 @@ class PostMergerAmplitudeFit:
         return self._get_peak_via_quadratic_fit(t, abs(modes)**2)[0]
     
     def _get_interp_data(self):
+        """Interpolate amplitudes after time shift or junk removal."""
         t_transform = self.raw_time - self.peak_time
         t_interp = np.arange(-50,max(t_transform)-100,0.1)
-        h_interp = gwtools.gwtools.interpolate_h(t_transform, self.raw_h, t_interp)
+        h_interp = gwtools.interpolate_h(t_transform, self.raw_h, t_interp)
         return t_interp, h_interp
     
     def plot_interpolated_amplitude(self):
+        """Plots interpolated amplitudes after time shift or junk removal."""
         plt.figure(figsize=(6,6))
         plt.semilogy(self.t_interp, abs(self.h_interp), color='royalblue')
         plt.xlabel('time')
