@@ -274,26 +274,3 @@ class TailFitMCMC:
         best_params = self.get_best_fit_params()
         return best_params['Atail'] / (t_pred + best_params['c'])**best_params['n']
         
-        
-# Usage example:
-def example_usage():
-    """Example of how to use the BayesianTailFitter class."""
-    
-    # Your data: t, A, t_tail_window, lsq_params
-    lsq_params = [5.59e+07, 309, 6.18]  # Example LS parameters
-    
-    # Create fitter instance
-    fitter = BayesianTailFitter(t, A, t_tail_window, lsq_params=lsq_params)
-    
-    # Perform fitting
-    samples, percentiles = fitter.fit(n_walkers=32, n_steps=2000, burn_in=500)
-    
-    # Get best-fit parameters
-    best_params = fitter.get_best_fit_params()
-    print(f"Best-fit parameters: {best_params}")
-    
-    # Make predictions
-    t_pred = np.linspace(t_tail_window[0], t_tail_window[1], 1000)
-    model_pred = fitter.predict(t_pred)
-    
-    return fitter
