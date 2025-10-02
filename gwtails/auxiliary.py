@@ -180,3 +180,15 @@ def find_tail_start(t, h, freq_threshold=1e-3, consecutive_zeros=5,
     tail_start_time = t_post[tail_start_index_post]
     
     return tail_start_time
+
+def calculate_chi_square(data, model, sigma):
+    """Calculate chi-square statistic."""
+    chi2 = np.sum((data - model)**2 / sigma**2)
+    return chi2
+
+def reduced_chi2(data, model, sigma, n_params):
+    """Calculate reduced chi-square (chi2 / degrees of freedom)."""
+    chi2 = np.sum((data - model)**2 / sigma**2)
+    n_data = len(data)
+    dof = n_data - n_params  # degrees of freedom
+    return chi2 / dof

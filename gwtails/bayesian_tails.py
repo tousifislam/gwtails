@@ -21,6 +21,26 @@ class TailFitMCMC:
     """
     Unified Bayesian fitting class for tail decay function: Atail * (t + ctail)**ptail
     Supports fixing any combination of parameters.
+
+    Example:
+    
+        # Create fit instance
+        fitter = gwtails.TailFitMCMC(t=t, # post-merger time
+                                     A=abs(h[(2,2)]), # post-merger amplitue
+                                     t_tail_window=[1200, 8000], 
+                                     lsq_params=None, # no initial guess
+                                     log_Atail_range=(0, 20), 
+                                     ctail_range=(0, 2500), 
+                                     ptail_range=(-15, -1),
+                                     fixed_params=None,
+                                     percentage_err_in_data=2.5)
+        
+        # Perform fitting
+        samples, percentiles, log_likelihood = fitter.fit(n_walkers=32, n_steps=2000, burn_in=500)
+        
+        # quick corner plot
+        fitter.plot_corner();
+
     """
     
     def __init__(self, t, A, t_tail_window, lsq_params=None, 
