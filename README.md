@@ -1,4 +1,4 @@
-# gwtails
+# ```gwtails```
 [![arXiv](https://img.shields.io/badge/arXiv-2407.04682-b31b1b.svg)](https://arxiv.org/abs/2407.04682)
 ![alt text](gwtails_logo.png)
 
@@ -22,7 +22,7 @@ This code is distributed under the MIT License. Details can be found in the LICE
 Tousif Islam
 
 ## Citation guideline
-If you make use of the gwtails framework, please cite the following papers:
+If you make use of the gwtails framework, please cite the following two papers:
 
 ```
 @article{Islam:2024rhm,
@@ -35,3 +35,20 @@ If you make use of the gwtails framework, please cite the following papers:
     year = "2024"
 }
 ```
+
+```
+@article{Islam:2025wci,
+    author = "Islam, Tousif and Faggioli, Guglielmo and Khanna, Gaurav",
+    title = "{Bayesian analysis of late-time tails in spin-aligned eccentric binary black hole mergers}",
+    eprint = "2511.21898",
+    archivePrefix = "arXiv",
+    primaryClass = "gr-qc",
+    month = "11",
+    year = "2025"
+}
+```
+
+## Papers that have used ```gwtails``` in their analysis
+3. 'Gravitational waves from the late inspiral, transition, and plunge of small-mass-ratio eccentric binaries'; Devin R. Becker, Scott A. Hughes, Gaurav Khanna; https://arxiv.org/abs/2511.21897
+2. 'Bayesian analysis of late-time tails in spin-aligned eccentric binary black hole mergers'; Tousif Islam, Guglielmo Faggioli, Gaurav Khanna; https://arxiv.org/abs/2511.21898
+1. 'Phenomenology and origin of late-time tails in eccentric binary black hole mergers'; Tousif Islam, Guglielmo Faggioli, Gaurav Khanna, Scott E. Field, Maarten van de Meent, Alessandra Buonanno; https://arxiv.org/abs/2407.04682
