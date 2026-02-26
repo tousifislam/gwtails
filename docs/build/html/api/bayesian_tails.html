@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TailFitMCMC &mdash; gwtails 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Auxiliary Functions" href="auxiliary.html" />
+    <link rel="prev" title="PostMergerAmplitudeFit" href="tails.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gwtails
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#from-pypi">From PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#from-source">From source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#least-squares-fitting-with-postmergeramplitudefit">Least-squares fitting with PostMergerAmplitudeFit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#bayesian-mcmc-fitting-with-tailfitmcmc">Bayesian MCMC fitting with TailFitMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#utility-functions">Utility functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tails.html">PostMergerAmplitudeFit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit.__init__"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_raw_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_raw_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_interpolated_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_interpolated_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit.freq"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.freq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit.tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.tail_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_and_tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_and_tail_fit_func()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TailFitMCMC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.__init__"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.tail_model"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.tail_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.log_likelihood"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_likelihood()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.log_prior"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_prior()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.log_probability"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_probability()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.fit"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.get_best_fit_params"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.get_best_fit_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.predict"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gwtails.bayesian_tails.TailFitMCMC.plot_corner"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.plot_corner()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auxiliary.html">Auxiliary Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auxiliary.html#gwtails.auxiliary.compute_tail_exponent"><code class="docutils literal notranslate"><span class="pre">compute_tail_exponent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auxiliary.html#gwtails.auxiliary.compute_frequency"><code class="docutils literal notranslate"><span class="pre">compute_frequency()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auxiliary.html#gwtails.auxiliary.find_tail_start"><code class="docutils literal notranslate"><span class="pre">find_tail_start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auxiliary.html#gwtails.auxiliary.calculate_chi_square"><code class="docutils literal notranslate"><span class="pre">calculate_chi_square()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auxiliary.html#gwtails.auxiliary.reduced_chi2"><code class="docutils literal notranslate"><span class="pre">reduced_chi2()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/index.html">Notebook Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/tail_analysis_example.html">Post-merger late-time tail analysis example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/tail_analysis_example.html#1.-Import-gwtails">1. Import gwtails</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/tail_analysis_example.html#2.-Analyze-post-merger-waveforms">2. Analyze post-merger waveforms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../citation.html#papers-using-gwtails">Papers using gwtails</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#reporting-issues">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#development-setup">Development Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#pull-requests">Pull Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#code-style">Code Style</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gwtails</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API Reference</a></li>
+      <li class="breadcrumb-item active">TailFitMCMC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/bayesian_tails.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-gwtails.bayesian_tails">
+<span id="tailfitmcmc"></span><h1>TailFitMCMC<a class="headerlink" href="#module-gwtails.bayesian_tails" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gwtails.bayesian_tails.</span></span><span class="sig-name descname"><span class="pre">TailFitMCMC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_tail_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lsq_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_Atail_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-5,</span> <span class="pre">15)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctail_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">2500)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ptail_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-15,</span> <span class="pre">-1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentage_err_in_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Unified Bayesian fitting class for tail decay function: Atail * (t + ctail)**ptail
+Supports fixing any combination of parameters.</p>
+<p class="rubric">Example</p>
+<p># Create fit instance
+fitter = gwtails.TailFitMCMC(t=t, # post-merger time</p>
+<blockquote>
+<div><p>A=abs(h[(2,2)]), # post-merger amplitue
+t_tail_window=[1200, 8000],
+lsq_params=None, # no initial guess
+log_Atail_range=(0, 20),
+ctail_range=(0, 2500),
+ptail_range=(-15, -1),
+fixed_params=None,
+percentage_err_in_data=2.5)</p>
+</div></blockquote>
+<p># Perform fitting
+samples, percentiles, log_likelihood = fitter.fit(n_walkers=32, n_steps=2000, burn_in=500)</p>
+<p># quick corner plot
+fitter.plot_corner();</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_tail_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lsq_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_Atail_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-5,</span> <span class="pre">15)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctail_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">2500)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ptail_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-15,</span> <span class="pre">-1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentage_err_in_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – array-like
+Time array</p></li>
+<li><p><strong>A</strong> – array-like
+Amplitude data</p></li>
+<li><p><strong>t_tail_window</strong> – list
+[t_start, t_end] for fitting window</p></li>
+<li><p><strong>lsq_params</strong> – list or array, optional
+[Atail, ctail, ptail] from least squares fit to use as initial guess</p></li>
+<li><p><strong>log_Atail_range</strong> – tuple, optional
+(min, max) range for log10(Atail) prior, default (-5, 15)</p></li>
+<li><p><strong>ctail_range</strong> – tuple, optional
+(min, max) range for ctail parameter prior, default (0, 2500)</p></li>
+<li><p><strong>ptail_range</strong> – tuple, optional
+(min, max) range for ptail parameter prior, default (-15, -1)</p></li>
+<li><p><strong>fixed_params</strong> – dict, optional
+Dictionary specifying fixed parameters, e.g., {‘ptail’: -6}, {‘ctail’: 0},
+{‘ptail’: -6, ‘ctail’: 0}, or None for all free parameters</p></li>
+<li><p><strong>percentage_err_in_data</strong> – float, optional
+Percentage error in data for likelihood calculation, default 2.5%</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.tail_model">
+<span class="sig-name descname"><span class="pre">tail_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_param_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.tail_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.tail_model" title="Link to this definition"></a></dt>
+<dd><p>Tail decay model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.log_likelihood">
+<span class="sig-name descname"><span class="pre">log_likelihood</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">free_param_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.log_likelihood"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.log_likelihood" title="Link to this definition"></a></dt>
+<dd><p>Log likelihood function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.log_prior">
+<span class="sig-name descname"><span class="pre">log_prior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">free_param_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.log_prior"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.log_prior" title="Link to this definition"></a></dt>
+<dd><p>Log prior function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.log_probability">
+<span class="sig-name descname"><span class="pre">log_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">free_param_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.log_probability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.log_probability" title="Link to this definition"></a></dt>
+<dd><p>Log posterior probability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_walkers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">burn_in</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.fit" title="Link to this definition"></a></dt>
+<dd><p>Perform Bayesian fitting using MCMC.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>n_walkers<span class="classifier">int, default 32</span></dt><dd><p>Number of MCMC walkers</p>
+</dd>
+<dt>n_steps<span class="classifier">int, default 2000</span></dt><dd><p>Number of MCMC steps</p>
+</dd>
+<dt>burn_in<span class="classifier">int, default 500</span></dt><dd><p>Number of burn-in steps to discard</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.get_best_fit_params">
+<span class="sig-name descname"><span class="pre">get_best_fit_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.get_best_fit_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.get_best_fit_params" title="Link to this definition"></a></dt>
+<dd><p>Get best-fit parameters from percentiles.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_pred</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.predict" title="Link to this definition"></a></dt>
+<dd><p>Predict model values using best-fit parameters.</p>
+<section id="id1">
+<h2>Parameters:<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>t_pred<span class="classifier">array-like, optional</span></dt><dd><p>Time points for prediction. If None, uses fitting time range.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gwtails.bayesian_tails.TailFitMCMC.plot_corner">
+<span class="sig-name descname"><span class="pre">plot_corner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gwtails/bayesian_tails.html#TailFitMCMC.plot_corner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gwtails.bayesian_tails.TailFitMCMC.plot_corner" title="Link to this definition"></a></dt>
+<dd><p>Create a corner plot of the MCMC samples.</p>
+<section id="id2">
+<h2>Parameters:<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs<span class="classifier">optional</span></dt><dd><p>Additional keyword arguments to pass to corner.corner()</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h2>Returns:<a class="headerlink" href="#returns" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>fig<span class="classifier">matplotlib.figure.Figure</span></dt><dd><p>The corner plot figure</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tails.html" class="btn btn-neutral float-left" title="PostMergerAmplitudeFit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="auxiliary.html" class="btn btn-neutral float-right" title="Auxiliary Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Tousif Islam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

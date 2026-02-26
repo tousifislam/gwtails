@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gwtails.auxiliary &mdash; gwtails 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            gwtails
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#from-pypi">From PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#from-source">From source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#least-squares-fitting-with-postmergeramplitudefit">Least-squares fitting with PostMergerAmplitudeFit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#bayesian-mcmc-fitting-with-tailfitmcmc">Bayesian MCMC fitting with TailFitMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#utility-functions">Utility functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/tails.html">PostMergerAmplitudeFit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.__init__"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_raw_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_raw_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_interpolated_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_interpolated_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.freq"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.freq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.tail_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_and_tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_and_tail_fit_func()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/bayesian_tails.html">TailFitMCMC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.__init__"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.tail_model"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.tail_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_likelihood"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_likelihood()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_prior"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_prior()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_probability"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_probability()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.fit"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.get_best_fit_params"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.get_best_fit_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.predict"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.plot_corner"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.plot_corner()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/auxiliary.html">Auxiliary Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.compute_tail_exponent"><code class="docutils literal notranslate"><span class="pre">compute_tail_exponent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.compute_frequency"><code class="docutils literal notranslate"><span class="pre">compute_frequency()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.find_tail_start"><code class="docutils literal notranslate"><span class="pre">find_tail_start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.calculate_chi_square"><code class="docutils literal notranslate"><span class="pre">calculate_chi_square()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.reduced_chi2"><code class="docutils literal notranslate"><span class="pre">reduced_chi2()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/index.html">Notebook Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/tail_analysis_example.html">Post-merger late-time tail analysis example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/tail_analysis_example.html#1.-Import-gwtails">1. Import gwtails</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/tail_analysis_example.html#2.-Analyze-post-merger-waveforms">2. Analyze post-merger waveforms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../citation.html#papers-using-gwtails">Papers using gwtails</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#reporting-issues">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#development-setup">Development Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#pull-requests">Pull Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#code-style">Code Style</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">gwtails</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">gwtails.auxiliary</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for gwtails.auxiliary</h1><div class="highlight"><pre>
+<span></span><span class="c1">#############################################################################</span>
+<span class="c1">##</span>
+<span class="c1">##      Filename: auxiliary.py</span>
+<span class="c1">##</span>
+<span class="c1">##      Author: Tousif Islam</span>
+<span class="c1">##</span>
+<span class="c1">##</span>
+<span class="c1">##      Modified: 09-27-2025</span>
+<span class="c1">##</span>
+<span class="c1">#############################################################################</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">find_peaks</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gwtools</span>
+
+<div class="viewcode-block" id="compute_tail_exponent">
+<a class="viewcode-back" href="../../api/auxiliary.html#gwtails.auxiliary.compute_tail_exponent">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_tail_exponent</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">use_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">window_length</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">polyorder</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute tail exponent p from time series data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    t : array-like</span>
+<span class="sd">        Time array</span>
+<span class="sd">    f : array-like  </span>
+<span class="sd">        Strain/psi4 amplitude data</span>
+<span class="sd">    use_filter : bool, default True</span>
+<span class="sd">        Whether to apply Savgol filter to the computed exponent</span>
+<span class="sd">    window_length : int, default 800</span>
+<span class="sd">        Length of filter window (must be odd)</span>
+<span class="sd">    polyorder : int, default 4</span>
+<span class="sd">        Order of polynomial used in filtering</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    p : array-like</span>
+<span class="sd">        Tail exponent (filtered if use_filter=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">savgol_filter</span>
+    
+    <span class="c1"># Compute tail exponent</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    
+    <span class="c1"># Apply filter if requested</span>
+    <span class="k">if</span> <span class="n">use_filter</span><span class="p">:</span>
+        <span class="c1"># Ensure window_length is odd and valid</span>
+        <span class="k">if</span> <span class="n">window_length</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">window_length</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">window_length</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">window_length</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+        
+        <span class="n">p</span> <span class="o">=</span> <span class="n">savgol_filter</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">window_length</span><span class="p">,</span> <span class="n">polyorder</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">p</span></div>
+
+
+<div class="viewcode-block" id="compute_frequency">
+<a class="viewcode-back" href="../../api/auxiliary.html#gwtails.auxiliary.compute_frequency">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_frequency</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">window_length</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">polyorder</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes orbital frequency of a given gravitational wave time-series.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    t : array-like</span>
+<span class="sd">        Time array</span>
+<span class="sd">    h : array-like</span>
+<span class="sd">        Waveform mode array or psi4 array</span>
+<span class="sd">    method : str, default &#39;spline&#39;</span>
+<span class="sd">        Method for computing frequency: &#39;spline&#39; or &#39;savgol&#39;</span>
+<span class="sd">    s : float, default 0.01</span>
+<span class="sd">        Smoothing parameter for spline interpolation</span>
+<span class="sd">    window_length : int, default 800</span>
+<span class="sd">        Window length for Savgol filter (used if method=&#39;savgol&#39;)</span>
+<span class="sd">    polyorder : int, default 4</span>
+<span class="sd">        Polynomial order for Savgol filter</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    freq : array-like</span>
+<span class="sd">        Orbital frequency</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">splev</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">savgol_filter</span>
+    
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;spline&#39;</span><span class="p">:</span>
+        <span class="c1"># Use spline interpolation with smoothing</span>
+        <span class="n">phase_interp</span> <span class="o">=</span> <span class="n">gwtools</span><span class="o">.</span><span class="n">interpolant_h</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">gwtools</span><span class="o">.</span><span class="n">phase</span><span class="p">(</span><span class="n">h</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">splev</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phase_interp</span><span class="p">,</span> <span class="n">der</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;savgol&#39;</span><span class="p">:</span>
+        <span class="c1"># Use Savgol filter on phase derivative</span>
+        <span class="n">phase</span> <span class="o">=</span> <span class="n">gwtools</span><span class="o">.</span><span class="n">phase</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">freq_raw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">phase</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        
+        <span class="c1"># Ensure window_length is odd and valid</span>
+        <span class="k">if</span> <span class="n">window_length</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">window_length</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">window_length</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">window_length</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">freq_raw</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">savgol_filter</span><span class="p">(</span><span class="n">freq_raw</span><span class="p">,</span> <span class="n">window_length</span><span class="p">,</span> <span class="n">polyorder</span><span class="p">))</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;method must be &#39;spline&#39; or &#39;savgol&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="find_tail_start">
+<a class="viewcode-back" href="../../api/auxiliary.html#gwtails.auxiliary.find_tail_start">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_tail_start</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">freq_threshold</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">consecutive_zeros</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+                    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span> <span class="n">merger_time</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">**</span><span class="n">freq_kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find the start of the tail by detecting consecutive frequency zeros.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    t : array-like</span>
+<span class="sd">        Time array</span>
+<span class="sd">    h : array-like</span>
+<span class="sd">        Strain/psi4 data</span>
+<span class="sd">    freq_threshold : float, default 1e-4</span>
+<span class="sd">        Threshold below which absolute frequency is considered zero</span>
+<span class="sd">    consecutive_zeros : int, default 5</span>
+<span class="sd">        Number of consecutive zero frequencies required</span>
+<span class="sd">    method : str, default &#39;spline&#39;</span>
+<span class="sd">        Method for frequency computation (&#39;spline&#39; or &#39;savgol&#39;)</span>
+<span class="sd">    merger_time : float, default 10</span>
+<span class="sd">        Time before which data is ignored (ensures tail is after merger)</span>
+<span class="sd">    **freq_kwargs : dict</span>
+<span class="sd">        Additional arguments for compute_frequency function</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    tail_start_time : float</span>
+<span class="sd">        Time at which tail starts</span>
+<span class="sd">    tail_start_index : int</span>
+<span class="sd">        Index at which tail starts (in original array)</span>
+<span class="sd">    frequency : array</span>
+<span class="sd">        Computed normalized frequency array</span>
+<span class="sd">    zero_mask : array</span>
+<span class="sd">        Boolean mask showing where frequency is considered zero</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># Filter data to only consider times after merger</span>
+    <span class="n">post_merger_mask</span> <span class="o">=</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">merger_time</span>
+    <span class="n">t_post</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">post_merger_mask</span><span class="p">]</span>
+    <span class="n">h_post</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">post_merger_mask</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_post</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No data found after merger time t=</span><span class="si">{</span><span class="n">merger_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    
+    <span class="c1"># Compute frequency on post-merger data</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="n">compute_frequency</span><span class="p">(</span><span class="n">t_post</span><span class="p">,</span> <span class="n">h_post</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="o">**</span><span class="n">freq_kwargs</span><span class="p">)</span>
+    
+    <span class="c1"># Normalize frequency by maximum value</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="n">frequency</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
+    
+    <span class="c1"># Create mask for &quot;zero&quot; frequencies using absolute value</span>
+    <span class="n">zero_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">freq_threshold</span>
+    
+    <span class="c1"># Find consecutive zero sequences</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">find_consecutive_groups</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">min_length</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find groups of consecutive True values with minimum length.&quot;&quot;&quot;</span>
+        <span class="c1"># Find transitions</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="kc">False</span><span class="p">],</span> <span class="n">mask</span><span class="p">,</span> <span class="p">[</span><span class="kc">False</span><span class="p">]))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+        <span class="n">starts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">diff</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ends</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">diff</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="c1"># Filter by minimum length</span>
+        <span class="n">valid_groups</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">ends</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">&gt;=</span> <span class="n">min_length</span><span class="p">:</span>
+                <span class="n">valid_groups</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">valid_groups</span>
+    
+    <span class="c1"># Find groups of consecutive zeros</span>
+    <span class="n">zero_groups</span> <span class="o">=</span> <span class="n">find_consecutive_groups</span><span class="p">(</span><span class="n">zero_mask</span><span class="p">,</span> <span class="n">consecutive_zeros</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_groups</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No sequences of </span><span class="si">{</span><span class="n">consecutive_zeros</span><span class="si">}</span><span class="s2"> consecutive zero frequencies found after t=</span><span class="si">{</span><span class="n">merger_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">zero_mask</span>
+    
+    <span class="c1"># Take the first group as the tail start</span>
+    <span class="n">tail_start_index_post</span> <span class="o">=</span> <span class="n">zero_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">tail_start_time</span> <span class="o">=</span> <span class="n">t_post</span><span class="p">[</span><span class="n">tail_start_index_post</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">tail_start_time</span></div>
+
+
+<div class="viewcode-block" id="calculate_chi_square">
+<a class="viewcode-back" href="../../api/auxiliary.html#gwtails.auxiliary.calculate_chi_square">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_chi_square</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate chi-square statistic.&quot;&quot;&quot;</span>
+    <span class="n">chi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">data</span> <span class="o">-</span> <span class="n">model</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">chi2</span></div>
+
+
+<div class="viewcode-block" id="reduced_chi2">
+<a class="viewcode-back" href="../../api/auxiliary.html#gwtails.auxiliary.reduced_chi2">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reduced_chi2</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">n_params</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate reduced chi-square (chi2 / degrees of freedom).&quot;&quot;&quot;</span>
+    <span class="n">chi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">data</span> <span class="o">-</span> <span class="n">model</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">n_data</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">dof</span> <span class="o">=</span> <span class="n">n_data</span> <span class="o">-</span> <span class="n">n_params</span>  <span class="c1"># degrees of freedom</span>
+    <span class="k">return</span> <span class="n">chi2</span> <span class="o">/</span> <span class="n">dof</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Tousif Islam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

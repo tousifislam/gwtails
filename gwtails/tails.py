@@ -16,11 +16,15 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import cm
 import matplotlib.patches as mpatches
-matplotlib.rcParams['mathtext.fontset'] ='stix'
-matplotlib.rcParams['font.family'] = 'STIXGeneral' 
-matplotlib.rcParams['axes.linewidth'] = 1 #set the value globally
-plt.rcParams["figure.figsize"] = (6,6)
-plt.rcParams['font.size'] = '18'
+
+
+def _apply_plot_style():
+    """Apply gwtails default matplotlib style settings."""
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+    matplotlib.rcParams['axes.linewidth'] = 1
+    plt.rcParams["figure.figsize"] = (6, 6)
+    plt.rcParams['font.size'] = '18'
 
 from scipy.signal import find_peaks
 from scipy.optimize import curve_fit
@@ -129,6 +133,7 @@ class PostMergerAmplitudeFit:
     
     def plot_raw_amplitude(self):
         """Plots raw amplitudes without time shift or junk removal."""
+        _apply_plot_style()
         plt.figure(figsize=(6,6))
         plt.semilogy(self.raw_time, abs(self.raw_h), color='royalblue')
         plt.xlabel('raw time')
@@ -165,6 +170,7 @@ class PostMergerAmplitudeFit:
     
     def plot_interpolated_amplitude(self):
         """Plots interpolated amplitudes after time shift or junk removal."""
+        _apply_plot_style()
         plt.figure(figsize=(6,6))
         plt.semilogy(self.t_interp, abs(self.h_interp), color='royalblue')
         plt.xlabel('time')
@@ -225,6 +231,7 @@ class PostMergerAmplitudeFit:
         
     def _plot_qnm_fit(self, t_plot=None, xmax=None):
         """Plot QNM fit comparison."""
+        _apply_plot_style()
         if t_plot is None:
             t_plot = np.arange(10, self.tail_fit_window[1], 0.1)
         
@@ -244,6 +251,7 @@ class PostMergerAmplitudeFit:
     
     def _plot_tail_fits(self, t_plot=None, xmax=None):
         """Plot tail fit comparison."""
+        _apply_plot_style()
         if t_plot is None:
             t_plot = np.arange(10, self.tail_fit_window[1], 0.1)
         
@@ -264,6 +272,7 @@ class PostMergerAmplitudeFit:
     
     def _plot_all_fits(self, t_plot=None, xmax=None):
         """Plot all fits in a two-panel comparison."""
+        _apply_plot_style()
         if t_plot is None:
             t_plot = np.arange(10, self.tail_fit_window[1], 0.1)
         

@@ -10,12 +10,9 @@
 ##
 #############################################################################
 
-import emcee
 import numpy as np
+import emcee
 import corner
-
-import emcee
-import numpy as np
 
 class TailFitMCMC:
     """

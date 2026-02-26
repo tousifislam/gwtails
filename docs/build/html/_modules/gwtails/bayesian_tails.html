@@ -1,0 +1,600 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gwtails.bayesian_tails &mdash; gwtails 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            gwtails
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#from-pypi">From PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#from-source">From source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#least-squares-fitting-with-postmergeramplitudefit">Least-squares fitting with PostMergerAmplitudeFit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#bayesian-mcmc-fitting-with-tailfitmcmc">Bayesian MCMC fitting with TailFitMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#utility-functions">Utility functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/tails.html">PostMergerAmplitudeFit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.__init__"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_raw_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_raw_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_interpolated_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_interpolated_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.freq"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.freq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.tail_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_and_tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_and_tail_fit_func()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/bayesian_tails.html">TailFitMCMC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.__init__"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.tail_model"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.tail_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_likelihood"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_likelihood()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_prior"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_prior()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_probability"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_probability()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.fit"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.get_best_fit_params"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.get_best_fit_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.predict"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.plot_corner"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.plot_corner()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/auxiliary.html">Auxiliary Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.compute_tail_exponent"><code class="docutils literal notranslate"><span class="pre">compute_tail_exponent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.compute_frequency"><code class="docutils literal notranslate"><span class="pre">compute_frequency()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.find_tail_start"><code class="docutils literal notranslate"><span class="pre">find_tail_start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.calculate_chi_square"><code class="docutils literal notranslate"><span class="pre">calculate_chi_square()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/auxiliary.html#gwtails.auxiliary.reduced_chi2"><code class="docutils literal notranslate"><span class="pre">reduced_chi2()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/index.html">Notebook Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/tail_analysis_example.html">Post-merger late-time tail analysis example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/tail_analysis_example.html#1.-Import-gwtails">1. Import gwtails</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/tail_analysis_example.html#2.-Analyze-post-merger-waveforms">2. Analyze post-merger waveforms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../citation.html#papers-using-gwtails">Papers using gwtails</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#reporting-issues">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#development-setup">Development Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#pull-requests">Pull Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#code-style">Code Style</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">gwtails</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">gwtails.bayesian_tails</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for gwtails.bayesian_tails</h1><div class="highlight"><pre>
+<span></span><span class="c1">#############################################################################</span>
+<span class="c1">##</span>
+<span class="c1">##      Filename: bayesian_tails.py</span>
+<span class="c1">##</span>
+<span class="c1">##      Author: Tousif Islam</span>
+<span class="c1">##</span>
+<span class="c1">##      Created: 12-07-2023</span>
+<span class="c1">##</span>
+<span class="c1">##      Modified: 09-27-2025</span>
+<span class="c1">##</span>
+<span class="c1">#############################################################################</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">emcee</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">corner</span>
+
+<div class="viewcode-block" id="TailFitMCMC">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TailFitMCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Unified Bayesian fitting class for tail decay function: Atail * (t + ctail)**ptail</span>
+<span class="sd">    Supports fixing any combination of parameters.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    </span>
+<span class="sd">        # Create fit instance</span>
+<span class="sd">        fitter = gwtails.TailFitMCMC(t=t, # post-merger time</span>
+<span class="sd">                                     A=abs(h[(2,2)]), # post-merger amplitue</span>
+<span class="sd">                                     t_tail_window=[1200, 8000], </span>
+<span class="sd">                                     lsq_params=None, # no initial guess</span>
+<span class="sd">                                     log_Atail_range=(0, 20), </span>
+<span class="sd">                                     ctail_range=(0, 2500), </span>
+<span class="sd">                                     ptail_range=(-15, -1),</span>
+<span class="sd">                                     fixed_params=None,</span>
+<span class="sd">                                     percentage_err_in_data=2.5)</span>
+<span class="sd">        </span>
+<span class="sd">        # Perform fitting</span>
+<span class="sd">        samples, percentiles, log_likelihood = fitter.fit(n_walkers=32, n_steps=2000, burn_in=500)</span>
+<span class="sd">        </span>
+<span class="sd">        # quick corner plot</span>
+<span class="sd">        fitter.plot_corner();</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="TailFitMCMC.__init__">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">t_tail_window</span><span class="p">,</span> <span class="n">lsq_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                 <span class="n">log_Atail_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">ctail_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2500</span><span class="p">),</span> <span class="n">ptail_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+                 <span class="n">fixed_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">percentage_err_in_data</span><span class="o">=</span><span class="mf">2.5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the class.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">            t : array-like</span>
+<span class="sd">                Time array</span>
+<span class="sd">            A : array-like  </span>
+<span class="sd">                Amplitude data</span>
+<span class="sd">            t_tail_window : list</span>
+<span class="sd">                [t_start, t_end] for fitting window</span>
+<span class="sd">            lsq_params : list or array, optional</span>
+<span class="sd">                [Atail, ctail, ptail] from least squares fit to use as initial guess</span>
+<span class="sd">            log_Atail_range : tuple, optional</span>
+<span class="sd">                (min, max) range for log10(Atail) prior, default (-5, 15)</span>
+<span class="sd">            ctail_range : tuple, optional</span>
+<span class="sd">                (min, max) range for ctail parameter prior, default (0, 2500)</span>
+<span class="sd">            ptail_range : tuple, optional</span>
+<span class="sd">                (min, max) range for ptail parameter prior, default (-15, -1)</span>
+<span class="sd">            fixed_params : dict, optional</span>
+<span class="sd">                Dictionary specifying fixed parameters, e.g., {&#39;ptail&#39;: -6}, {&#39;ctail&#39;: 0}, </span>
+<span class="sd">                {&#39;ptail&#39;: -6, &#39;ctail&#39;: 0}, or None for all free parameters</span>
+<span class="sd">            percentage_err_in_data : float, optional</span>
+<span class="sd">                Percentage error in data for likelihood calculation, default 2.5%</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_tail_window</span> <span class="o">=</span> <span class="n">t_tail_window</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lsq_params</span> <span class="o">=</span> <span class="n">lsq_params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentage_err_in_data</span> <span class="o">=</span> <span class="n">percentage_err_in_data</span>
+        
+        <span class="c1"># Prior ranges</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_Atail_range</span> <span class="o">=</span> <span class="n">log_Atail_range</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctail_range</span> <span class="o">=</span> <span class="n">ctail_range</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ptail_range</span> <span class="o">=</span> <span class="n">ptail_range</span>
+        
+        <span class="c1"># Handle fixed parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span> <span class="o">=</span> <span class="n">fixed_params</span> <span class="k">if</span> <span class="n">fixed_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}</span>
+        
+        <span class="c1"># Determine free parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;log10_Atail&#39;</span><span class="p">,</span> <span class="s1">&#39;ctail&#39;</span><span class="p">,</span> <span class="s1">&#39;ptail&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">free_params</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_names</span> <span class="k">if</span> <span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">free_params</span><span class="p">)</span>
+        
+        <span class="c1"># Extract data within window</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">&gt;=</span> <span class="n">t_tail_window</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">&lt;=</span> <span class="n">t_tail_window</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_fit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A_fit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        
+        <span class="c1"># Initialize results as None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">samples</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_samples</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_unpack_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">free_param_values</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert free parameter values to full parameter set.&quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">free_idx</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_names</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="p">:</span>
+                <span class="n">params</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="p">[</span><span class="n">param</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">params</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="n">free_param_values</span><span class="p">[</span><span class="n">free_idx</span><span class="p">]</span>
+                <span class="n">free_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="k">return</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;log10_Atail&#39;</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;ctail&#39;</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;ptail&#39;</span><span class="p">]</span>
+    
+<div class="viewcode-block" id="TailFitMCMC.tail_model">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.tail_model">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">tail_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">free_param_values</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tail decay model.&quot;&quot;&quot;</span>
+        <span class="n">log10_Atail</span><span class="p">,</span> <span class="n">ctail</span><span class="p">,</span> <span class="n">ptail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unpack_params</span><span class="p">(</span><span class="n">free_param_values</span><span class="p">)</span>
+        <span class="n">Atail</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">log10_Atail</span>
+        <span class="k">return</span> <span class="n">Atail</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">ctail</span><span class="p">)</span><span class="o">**</span><span class="n">ptail</span></div>
+
+    
+<div class="viewcode-block" id="TailFitMCMC.log_likelihood">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_likelihood">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_likelihood</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">free_param_values</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Log likelihood function.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t_fit</span><span class="p">,</span> <span class="n">free_param_values</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">model</span><span class="p">))</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">model</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+            
+            <span class="n">sigma</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percentage_err_in_data</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">A_fit</span>  <span class="c1"># Relative error</span>
+            <span class="n">chi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">A_fit</span> <span class="o">-</span> <span class="n">model</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">chi2</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span></div>
+
+    
+<div class="viewcode-block" id="TailFitMCMC.log_prior">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_prior">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_prior</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">free_param_values</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Log prior function.&quot;&quot;&quot;</span>
+        <span class="n">params_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">free_idx</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_names</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">param</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="p">:</span>
+                <span class="n">params_dict</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="n">free_param_values</span><span class="p">[</span><span class="n">free_idx</span><span class="p">]</span>
+                <span class="n">free_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="c1"># Check bounds for free parameters only</span>
+        <span class="k">if</span> <span class="s1">&#39;log10_Atail&#39;</span> <span class="ow">in</span> <span class="n">params_dict</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_Atail_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">params_dict</span><span class="p">[</span><span class="s1">&#39;log10_Atail&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_Atail_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        
+        <span class="k">if</span> <span class="s1">&#39;ctail&#39;</span> <span class="ow">in</span> <span class="n">params_dict</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctail_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">params_dict</span><span class="p">[</span><span class="s1">&#39;ctail&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctail_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        
+        <span class="k">if</span> <span class="s1">&#39;ptail&#39;</span> <span class="ow">in</span> <span class="n">params_dict</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ptail_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">params_dict</span><span class="p">[</span><span class="s1">&#39;ptail&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">ptail_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        
+        <span class="k">return</span> <span class="mf">0.0</span></div>
+
+    
+<div class="viewcode-block" id="TailFitMCMC.log_probability">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_probability">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_probability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">free_param_values</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Log posterior probability.&quot;&quot;&quot;</span>
+        <span class="n">lp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_prior</span><span class="p">(</span><span class="n">free_param_values</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">lp</span><span class="p">):</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        <span class="k">return</span> <span class="n">lp</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span><span class="p">(</span><span class="n">free_param_values</span><span class="p">)</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_initial_guess</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get initial guess for free parameters.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lsq_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">Atail_lsq</span><span class="p">,</span> <span class="n">ctail_lsq</span><span class="p">,</span> <span class="n">ptail_lsq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lsq_params</span>
+            <span class="n">log10_Atail_lsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Atail_lsq</span><span class="p">))</span>
+            <span class="n">all_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;log10_Atail&#39;</span><span class="p">:</span> <span class="n">log10_Atail_lsq</span><span class="p">,</span> <span class="s1">&#39;ctail&#39;</span><span class="p">:</span> <span class="n">ctail_lsq</span><span class="p">,</span> <span class="s1">&#39;ptail&#39;</span><span class="p">:</span> <span class="n">ptail_lsq</span><span class="p">}</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;..... Using least-squares parameters as initial guess&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log_A_median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_fit</span><span class="p">))</span>
+            <span class="n">all_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;log10_Atail&#39;</span><span class="p">:</span> <span class="n">log_A_median</span><span class="p">,</span> <span class="s1">&#39;ctail&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;ptail&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">5</span><span class="p">}</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;..... Using data-driven initial guess&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Extract only free parameters</span>
+        <span class="n">initial_guess</span> <span class="o">=</span> <span class="p">[</span><span class="n">all_params</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">free_params</span><span class="p">]</span>
+        
+        <span class="c1"># Print initial guess</span>
+        <span class="n">guess_str</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">all_params</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_names</span> 
+                               <span class="k">if</span> <span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="p">])</span>
+        <span class="n">fixed_str</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (fixed)&quot;</span> 
+                              <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="p">])</span>
+        
+        <span class="k">if</span> <span class="n">fixed_str</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.......... Initial guess: </span><span class="si">{</span><span class="n">guess_str</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">fixed_str</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.......... Initial guess: </span><span class="si">{</span><span class="n">guess_str</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">initial_guess</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_walkers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_guess</span><span class="p">,</span> <span class="n">n_walkers</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize MCMC walkers.&quot;&quot;&quot;</span>
+        <span class="c1"># Get bounds and widths for free parameters</span>
+        <span class="n">ranges</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;log10_Atail&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_Atail_range</span><span class="p">,</span>
+            <span class="s1">&#39;ctail&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctail_range</span><span class="p">,</span>
+            <span class="s1">&#39;ptail&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ptail_range</span>
+        <span class="p">}</span>
+        
+        <span class="n">bounded_guess</span> <span class="o">=</span> <span class="n">initial_guess</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">scatter</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">free_params</span><span class="p">):</span>
+            <span class="n">param_range</span> <span class="o">=</span> <span class="n">ranges</span><span class="p">[</span><span class="n">param</span><span class="p">]</span>
+            <span class="c1"># Ensure within bounds</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">param_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">bounded_guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">param_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="n">bounded_guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">param_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">param_range</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="c1"># Calculate scatter as 10% of range width</span>
+            <span class="n">scatter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">param_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">param_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        
+        <span class="n">scatter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scatter</span><span class="p">)</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">max_attempts</span> <span class="o">=</span> <span class="mi">1000</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_walkers</span><span class="p">):</span>
+            <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="n">max_attempts</span><span class="p">:</span>
+                <span class="n">candidate</span> <span class="o">=</span> <span class="n">bounded_guess</span> <span class="o">+</span> <span class="n">scatter</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+                
+                <span class="c1"># Check if within bounds</span>
+                <span class="n">valid</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">free_params</span><span class="p">):</span>
+                    <span class="n">param_range</span> <span class="o">=</span> <span class="n">ranges</span><span class="p">[</span><span class="n">param</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">param_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">candidate</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">param_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                        <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="k">break</span>
+                
+                <span class="k">if</span> <span class="n">valid</span><span class="p">:</span>
+                    <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+                    <span class="k">break</span>
+                <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+            <span class="c1"># Fallback to uniform sampling</span>
+            <span class="k">if</span> <span class="n">attempts</span> <span class="o">&gt;=</span> <span class="n">max_attempts</span><span class="p">:</span>
+                <span class="n">candidate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">ranges</span><span class="p">[</span><span class="n">param</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">ranges</span><span class="p">[</span><span class="n">param</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> 
+                    <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">free_params</span>
+                <span class="p">])</span>
+                <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="TailFitMCMC.fit">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.fit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_walkers</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">burn_in</span><span class="o">=</span><span class="mi">500</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform Bayesian fitting using MCMC.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        -----------</span>
+<span class="sd">        n_walkers : int, default 32</span>
+<span class="sd">            Number of MCMC walkers</span>
+<span class="sd">        n_steps : int, default 2000</span>
+<span class="sd">            Number of MCMC steps</span>
+<span class="sd">        burn_in : int, default 500</span>
+<span class="sd">            Number of burn-in steps to discard</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Print fitting message</span>
+        <span class="n">fixed_str</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+        <span class="k">if</span> <span class="n">fixed_str</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;..... Fitting tail data with the function : Atail * (t + ctail)**ptail (</span><span class="si">{</span><span class="n">fixed_str</span><span class="si">}</span><span class="s2"> fixed)&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;..... Fitting tail data with the function : Atail * (t + ctail)**ptail&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Get initial guess</span>
+        <span class="n">initial_guess</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_initial_guess</span><span class="p">()</span>
+        
+        <span class="c1"># Initialize walkers</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_walkers</span><span class="p">(</span><span class="n">initial_guess</span><span class="p">,</span> <span class="n">n_walkers</span><span class="p">)</span>
+        
+        <span class="c1"># Run MCMC</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span> <span class="o">=</span> <span class="n">emcee</span><span class="o">.</span><span class="n">EnsembleSampler</span><span class="p">(</span>
+            <span class="n">n_walkers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> 
+            <span class="k">lambda</span> <span class="n">params</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_probability</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+        <span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;..... Running MCMC&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">run_mcmc</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Get samples after burn-in</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">get_chain</span><span class="p">(</span><span class="n">discard</span><span class="o">=</span><span class="n">burn_in</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Get log likelihood values after burn-in</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">get_log_prob</span><span class="p">(</span><span class="n">discard</span><span class="o">=</span><span class="n">burn_in</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Calculate percentiles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_percentiles</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;..... Done!&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_samples</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculate_percentiles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate parameter percentiles from MCMC samples.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;..... Bayesian Results:&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Process free parameters</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">free_params</span><span class="p">):</span>
+            <span class="n">mcmc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">84</span><span class="p">])</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">mcmc</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;median&#39;</span><span class="p">:</span> <span class="n">mcmc</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s1">&#39;upper_err&#39;</span><span class="p">:</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                <span class="s1">&#39;lower_err&#39;</span><span class="p">:</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">}</span>
+            
+            <span class="k">if</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">&#39;log10_Atail&#39;</span><span class="p">:</span>
+                <span class="c1"># Report both log and linear scale</span>
+                <span class="n">Atail_mcmc</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">mcmc</span>
+                <span class="n">Atail_q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Atail_mcmc</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span><span class="p">[</span><span class="s1">&#39;Atail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;median&#39;</span><span class="p">:</span> <span class="n">Atail_mcmc</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="s1">&#39;upper_err&#39;</span><span class="p">:</span> <span class="n">Atail_q</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="s1">&#39;lower_err&#39;</span><span class="p">:</span> <span class="n">Atail_q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="p">}</span>
+                <span class="n">avg_err</span> <span class="o">=</span> <span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="n">avg_Atail_err</span> <span class="o">=</span> <span class="p">(</span><span class="n">Atail_q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Atail_q</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.......... log10_Atail = </span><span class="si">{</span><span class="n">mcmc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">avg_err</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.......... Atail = </span><span class="si">{</span><span class="n">Atail_mcmc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">avg_Atail_err</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">avg_err</span> <span class="o">=</span> <span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.......... </span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">mcmc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">avg_err</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Store fixed parameters</span>
+        <span class="k">for</span> <span class="n">param</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;median&#39;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span> <span class="s1">&#39;upper_err&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;lower_err&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.......... </span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (fixed)&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Print log likelihood statistics</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_samples</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">log_like_mcmc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_samples</span><span class="p">,</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">84</span><span class="p">])</span>
+            <span class="n">log_like_q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">log_like_mcmc</span><span class="p">)</span>
+            <span class="n">avg_log_like_err</span> <span class="o">=</span> <span class="p">(</span><span class="n">log_like_q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">log_like_q</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.......... log_likelihood = </span><span class="si">{</span><span class="n">log_like_mcmc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">avg_log_like_err</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="TailFitMCMC.get_best_fit_params">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.get_best_fit_params">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_best_fit_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get best-fit parameters from percentiles.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must run fit() first&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;Atail&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span><span class="p">[</span><span class="s1">&#39;Atail&#39;</span><span class="p">][</span><span class="s1">&#39;median&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;ctail&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span><span class="p">[</span><span class="s1">&#39;ctail&#39;</span><span class="p">][</span><span class="s1">&#39;median&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;ptail&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span><span class="p">[</span><span class="s1">&#39;ptail&#39;</span><span class="p">][</span><span class="s1">&#39;median&#39;</span><span class="p">]</span>
+        <span class="p">}</span></div>
+
+    
+<div class="viewcode-block" id="TailFitMCMC.predict">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.predict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t_pred</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict model values using best-fit parameters.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        -----------</span>
+<span class="sd">        t_pred : array-like, optional</span>
+<span class="sd">            Time points for prediction. If None, uses fitting time range.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentiles</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must run fit() first&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">t_pred</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">t_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_fit</span>
+        
+        <span class="n">best_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_best_fit_params</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">best_params</span><span class="p">[</span><span class="s1">&#39;Atail&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">t_pred</span> <span class="o">+</span> <span class="n">best_params</span><span class="p">[</span><span class="s1">&#39;ctail&#39;</span><span class="p">])</span><span class="o">**</span><span class="n">best_params</span><span class="p">[</span><span class="s1">&#39;ptail&#39;</span><span class="p">]</span></div>
+
+    
+<div class="viewcode-block" id="TailFitMCMC.plot_corner">
+<a class="viewcode-back" href="../../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.plot_corner">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_corner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a corner plot of the MCMC samples.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        -----------</span>
+<span class="sd">        **kwargs : optional</span>
+<span class="sd">            Additional keyword arguments to pass to corner.corner()</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        --------</span>
+<span class="sd">        fig : matplotlib.figure.Figure</span>
+<span class="sd">            The corner plot figure</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must run fit() first&quot;</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">corner</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;corner package is required for plotting. Install with: pip install corner&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Create labels for free parameters only</span>
+        <span class="n">label_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;log10_Atail&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$\rm log_</span><span class="si">{10}</span><span class="s1">(A_{\rm tail})$&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ctail&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$c_{\rm tail}$&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ptail&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$p_{\rm tail}$&#39;</span>
+        <span class="p">}</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">label_map</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">free_params</span><span class="p">]</span>
+        
+        <span class="c1"># Create corner plot</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">corner</span><span class="o">.</span><span class="n">corner</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">fig</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Tousif Islam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

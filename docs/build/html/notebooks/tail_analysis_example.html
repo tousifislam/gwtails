@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-merger late-time tail analysis example &mdash; gwtails 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Citation" href="../citation.html" />
+    <link rel="prev" title="Notebook Tutorials" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gwtails
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#from-pypi">From PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#from-source">From source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#least-squares-fitting-with-postmergeramplitudefit">Least-squares fitting with PostMergerAmplitudeFit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#bayesian-mcmc-fitting-with-tailfitmcmc">Bayesian MCMC fitting with TailFitMCMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#utility-functions">Utility functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/tails.html">PostMergerAmplitudeFit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.__init__"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_raw_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_raw_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.plot_interpolated_amplitude"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.plot_interpolated_amplitude()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.freq"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.freq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.tail_fit_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/tails.html#gwtails.tails.PostMergerAmplitudeFit.qnm_and_tail_fit_func"><code class="docutils literal notranslate"><span class="pre">PostMergerAmplitudeFit.qnm_and_tail_fit_func()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/bayesian_tails.html">TailFitMCMC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.__init__"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.tail_model"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.tail_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_likelihood"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_likelihood()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_prior"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_prior()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.log_probability"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.log_probability()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.fit"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.get_best_fit_params"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.get_best_fit_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.predict"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/bayesian_tails.html#gwtails.bayesian_tails.TailFitMCMC.plot_corner"><code class="docutils literal notranslate"><span class="pre">TailFitMCMC.plot_corner()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/auxiliary.html">Auxiliary Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/auxiliary.html#gwtails.auxiliary.compute_tail_exponent"><code class="docutils literal notranslate"><span class="pre">compute_tail_exponent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auxiliary.html#gwtails.auxiliary.compute_frequency"><code class="docutils literal notranslate"><span class="pre">compute_frequency()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auxiliary.html#gwtails.auxiliary.find_tail_start"><code class="docutils literal notranslate"><span class="pre">find_tail_start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auxiliary.html#gwtails.auxiliary.calculate_chi_square"><code class="docutils literal notranslate"><span class="pre">calculate_chi_square()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auxiliary.html#gwtails.auxiliary.reduced_chi2"><code class="docutils literal notranslate"><span class="pre">reduced_chi2()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Notebook Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Post-merger late-time tail analysis example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.-Import-gwtails">1. Import gwtails</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-Analyze-post-merger-waveforms">2. Analyze post-merger waveforms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../citation.html#papers-using-gwtails">Papers using gwtails</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#reporting-issues">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#development-setup">Development Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#pull-requests">Pull Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#code-style">Code Style</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gwtails</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Notebook Tutorials</a></li>
+      <li class="breadcrumb-item active">Post-merger late-time tail analysis example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/notebooks/tail_analysis_example.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Post-merger-late-time-tail-analysis-example">
+<h1>Post-merger late-time tail analysis example<a class="headerlink" href="#Post-merger-late-time-tail-analysis-example" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>This example is based on the paper “Phenomenology and origin of late-time tails in eccentric binary black hole mergers” by Islam, Faggioli, Khanna, Field, van de Meent and Buonanno.</p></li>
+<li><p>Here, we inspect waveforms produced by merging eccentric binary black holes (BBH). These waveforms are all generated using black hole perturbation theory.</p></li>
+<li><p>The trajectories are described by the dynamics of the point-particle orbiting the Kerr black hole using effective-one-body formalism: <a class="reference external" href="http://arxiv.org/abs/gr-qc/9811091">http://arxiv.org/abs/gr-qc/9811091</a>, <a class="reference external" href="http://arxiv.org/abs/gr-qc/0001013">http://arxiv.org/abs/gr-qc/0001013</a>, <a class="reference external" href="http://arxiv.org/abs/2405.19006">http://arxiv.org/abs/2405.19006</a>. These trajectories are then fed into the time-domain Teukolsky solver developed by Gaurav Khanna and collaborators: <a class="reference external" href="http://arxiv.org/abs/gr-qc/0703028">http://arxiv.org/abs/gr-qc/0703028</a>, <a class="reference external" href="http://arxiv.org/abs/0803.0317">http://arxiv.org/abs/0803.0317</a>, <a class="reference external" href="http://arxiv.org/abs/0803.0317">http://arxiv.org/abs/0803.0317</a>, <a class="reference external" href="http://arxiv.org/abs/1003.0485">http://arxiv.org/abs/1003.0485</a>,
+<a class="reference external" href="http://arxiv.org/abs/1108.1816">http://arxiv.org/abs/1108.1816</a>, <a class="reference external" href="http://arxiv.org/abs/arXiv:2010.04760">http://arxiv.org/abs/arXiv:2010.04760</a>.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpatches</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;mathtext.fontset&#39;</span><span class="p">]</span> <span class="o">=</span><span class="s1">&#39;stix&#39;</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;STIXGeneral&#39;</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#set the value globally</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;18&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">usetex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="1.-Import-gwtails">
+<h1>1. Import gwtails<a class="headerlink" href="#1.-Import-gwtails" title="Link to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="c1"># provide a path for the gwtails package</span>
+<span class="n">PATH_TO_GWTAILS</span> <span class="o">=</span> <span class="s2">&quot;/data/tislam/works/tails/pool/gwtails/&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PATH_TO_GWTAILS</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gwtails</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gwtails</span><span class="w"> </span><span class="kn">import</span> <span class="n">PostMergerAmplitudeFit</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">PostMergerAmplitudeFit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Help on class PostMergerAmplitudeFit in module gwtails.tails:
+
+class PostMergerAmplitudeFit(builtins.object)
+ |  PostMergerAmplitudeFit(filename, qinput=1000, throw_junk_until_indx=None, qnm_fit_window=None, tail_fit_window=None, crossterm_fit_window=None, fit_tail_envelop=False)
+ |
+ |  Class to fit post-merger data
+ |
+ |  Methods defined here:
+ |
+ |  __init__(self, filename, qinput=1000, throw_junk_until_indx=None, qnm_fit_window=None, tail_fit_window=None, crossterm_fit_window=None, fit_tail_envelop=False)
+ |      filename: name of the waveform data file (Required); should be in .txt or .dat format;
+ |                columns should have the following format: time, h_real, h_imag, ..
+ |
+ |      qinput: mass ratio values with qinput&gt;=1
+ |      throw_junk_until_indx: last index until which data should be discarded before applying qnm or tail fits;
+ |                             Default is None
+ |
+ |      tail_fit_window: provide a window for fitting tail coefficients only;
+ |                       e.g. [200,800] (in M);
+ |                       Default is None (in that case no tail fit is performed)
+ |      qnm_fit_window:  provide a window for fitting qnm coefficients only;
+ |                       e.g. [200,800] (in M);
+ |                       Default is None (in that case no qnm fit is performed)
+ |      crossterm_fit_window: provide a window for fitting cross-term coefficients only;
+ |                            e.g. [100,200] (in M);
+ |                            Default is None (in that case no cross-term fit is performed)
+ |
+ |      fit_tail_envelop: Whether the data has oscillatory tail behaviour - in which case, we fit the tail envelop;
+ |                        Default is False.
+ |
+ |  freq(time, h, s=0.1)
+ |
+ |  plot_interpolated_amplitude(self)
+ |
+ |  plot_raw_amplitude(self)
+ |
+ |  qnm_and_tail_fit_func(self, t, phi_tail, omega)
+ |
+ |  qnm_fit_func(self, t, Aqnm, tau)
+ |
+ |  tail_fit_func(self, t, Atail, c, n)
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+
+</pre></div></div>
+</div>
+</section>
+<section id="2.-Analyze-post-merger-waveforms">
+<h1>2. Analyze post-merger waveforms<a class="headerlink" href="#2.-Analyze-post-merger-waveforms" title="Link to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import data file</span>
+<span class="c1"># this is for a merging binary with</span>
+<span class="c1"># mass ratio q=1000, eccentricity e=0.9 and spin a=0.0</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;hm02_ecc_p09_e09_a00_q_1000.dat&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pass it too gwtails without doing anything</span>
+<span class="c1"># we will check the raw data first</span>
+<span class="n">rd</span> <span class="o">=</span> <span class="n">PostMergerAmplitudeFit</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Data read. Shape of data : (11,11500)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rd</span><span class="o">.</span><span class="n">plot_raw_amplitude</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_tail_analysis_example_8_0.png" src="../_images/notebooks_tail_analysis_example_8_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the waveform amplitude after making sure that the peak at t=0</span>
+<span class="c1"># and interpolating on a new time grid</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">plot_interpolated_amplitude</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_tail_analysis_example_9_0.png" src="../_images/notebooks_tail_analysis_example_9_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make sure to throw the initial orbits for the post-merger fits</span>
+<span class="n">rd</span> <span class="o">=</span> <span class="n">PostMergerAmplitudeFit</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
+                                <span class="n">throw_junk_until_indx</span><span class="o">=</span><span class="mi">1200</span><span class="p">)</span>
+<span class="c1"># and we are done</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">plot_interpolated_amplitude</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Data read. Shape of data : (11,11500)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_tail_analysis_example_10_1.png" src="../_images/notebooks_tail_analysis_example_10_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now pass it again to gwtails with fit options</span>
+<span class="n">rd</span> <span class="o">=</span> <span class="n">PostMergerAmplitudeFit</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
+                            <span class="n">throw_junk_until_indx</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="c1"># initial indices to remove before analyzing post-merger data</span>
+                            <span class="n">qnm_fit_window</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">70</span><span class="p">],</span> <span class="c1"># time window to fit qnm</span>
+                            <span class="n">tail_fit_window</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>  <span class="c1"># time window to fit tails</span>
+                            <span class="n">crossterm_fit_window</span><span class="o">=</span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">400</span><span class="p">])</span> <span class="c1"># time window to fit the crossterms</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Data read. Shape of data : (11,11500)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rd</span><span class="o">.</span><span class="n">_plot_qnm_fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_tail_analysis_example_12_0.png" src="../_images/notebooks_tail_analysis_example_12_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rd</span><span class="o">.</span><span class="n">_plot_tail_fits</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_tail_analysis_example_13_0.png" src="../_images/notebooks_tail_analysis_example_13_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rd</span><span class="o">.</span><span class="n">_plot_all_fits</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_tail_analysis_example_14_0.png" src="../_images/notebooks_tail_analysis_example_14_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print interesting fit params</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">_print_all_fits</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Atail : 3.616772118e+05
+c : 2.816224627e+02
+n : 3.671228685e+00
+Aqnm : 5.773862021
+tau : 12.037748086
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Notebook Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../citation.html" class="btn btn-neutral float-right" title="Citation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Tousif Islam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

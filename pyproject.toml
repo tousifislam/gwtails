@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gwtails"
+version = "0.1.0"
+description = "Post-merger late-time tail analysis for eccentric binary black hole mergers"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [
+    { name = "Tousif Islam", email = "tislam1@umassd.edu" },
+]
+keywords = [
+    "gravitational waves",
+    "binary black holes",
+    "eccentric mergers",
+    "post-merger tails",
+    "waveform analysis",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "gwtools",
+    "emcee",
+    "corner",
+]
+
+[project.optional-dependencies]
+docs = [
+    "sphinx",
+    "sphinx-rtd-theme",
+    "nbsphinx",
+    "pandoc",
+]
+
+[project.urls]
+Homepage = "https://github.com/tousifislam/gwtails"
+Repository = "https://github.com/tousifislam/gwtails"
+"Bug Tracker" = "https://github.com/tousifislam/gwtails/issues"
+
+[tool.setuptools.packages.find]
+include = ["gwtails*"]
