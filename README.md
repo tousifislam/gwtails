@@ -1,5 +1,7 @@
 # ```gwtails```
 [![arXiv](https://img.shields.io/badge/arXiv-2407.04682-b31b1b.svg)](https://arxiv.org/abs/2407.04682)
+[![PyPI](https://img.shields.io/pypi/v/gwtails.svg)](https://pypi.org/project/gwtails/)
+[![Documentation](https://readthedocs.org/projects/gwtails/badge/?version=latest)](https://gwtails.readthedocs.io/en/latest/)
 ![alt text](gwtails_logo.png)
 
 This is a Python package to analyze post-merger late-time tails in eccentric binary black hole (BBH) mergers. 

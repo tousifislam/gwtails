@@ -5,3 +5,4 @@ Notebook Tutorials
    :maxdepth: 1
 
    tail_analysis_example
+   tail_analysis_bayesian
